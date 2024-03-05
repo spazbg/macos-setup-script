@@ -18,7 +18,7 @@ APPS=("CheatSheet" "CleanShot" "GitKraken" "Keka" "Maccy" "Notion"
 CASKS=("iterm2" "visual-studio-code" "vlc" "slack" "postman" "bitwarden" 
        "hiddenbar" "cheatsheet" "cleanshot" "gitkraken" "keka" "notion" 
        "runjs" "viber" "webstorm" "sublime-text" "deepl" "devutils" 
-       "iina" "command-x" "jump-desktop-connect" "alt-tab")
+       "iina" "command-x" "jump-desktop-connect" "alt-tab" "time-out")
 
 # Install apps using Homebrew
 for app in "${APPS[@]}"
