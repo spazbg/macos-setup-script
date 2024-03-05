@@ -8,26 +8,56 @@ then
     exit 1
 fi
 
-# List of macOS apps to install
-APPS=("CheatSheet" "CleanShot" "GitKraken" "Keka" "Maccy" "Notion"
-      "RunJS" "slack" "Viber" "WebStorm" "vlc" "iterm2" 
-      "visual-studio-code" "Sublime-text" "Postman" "Bitwarden" 
-      "Deepl" "DevUtils" "IINA" "Hidden Bar" "Numi")
+# List of CLI apps (Formulae) to install
+# Add your CLI apps here
+CLI_APPS=()
 
-# List of casks to install
-CASKS=("iterm2" "visual-studio-code" "vlc" "slack" "postman" "bitwarden" 
-       "hiddenbar" "cheatsheet" "cleanshot" "gitkraken" "keka" "notion" 
-       "runjs" "viber" "webstorm" "sublime-text" "deepl" "devutils" 
-       "iina" "command-x" "jump-desktop-connect" "alt-tab" "time-out")
+# List of macOS apps with GUI (Casks) to install
+GUI_APPS=(
+    "cheatsheet" 
+    "cleanshot" 
+    "gitkraken" 
+    "keka" 
+    "maccy" 
+    "notion" 
+    "runjs" 
+    "slack" 
+    "viber" 
+    "webstorm" 
+    "vlc" 
+    "visual-studio-code" 
+    "sublime-text" 
+    "postman" 
+    "bitwarden" 
+    "deepl" 
+    "devutils" 
+    "iina" 
+    "hiddenbar" 
+    "numi"
+    "iterm2" 
+    "command-x" 
+    "jump-desktop-connect" 
+    "alt-tab" 
+    "time-out" 
+    "cleanmymac" 
+    "rectangle-pro"
+    "google-chrome"
+)
 
-# Install apps using Homebrew
-for app in "${APPS[@]}"
+echo "Starting to install CLI apps..."
+# Install CLI apps using Homebrew (Formulae)
+for app in "${CLI_APPS[@]}"
 do
+    echo "Installing $app..."
     brew install $app
 done
 
-# Install casks using Homebrew
-for cask in "${CASKS[@]}"
+echo "Starting to install GUI apps..."
+# Install GUI apps using Homebrew Cask
+for app in "${GUI_APPS[@]}"
 do
-    brew install --cask $cask
+    echo "Installing $app..."
+    brew install --cask $app
 done
+
+echo "All applications have been installed."
